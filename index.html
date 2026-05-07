@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="A modern online store and landing page experience." />
   <meta name="keywords" content="store, gaming, landing page, online shop, gaming store" />
-  <meta name="theme-color" content="#000000" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Store Landing Page" />
@@ -49,7 +48,7 @@
       </ul>
       <div class="nav-actions">
         <div class="user-status-card" id="userStatusCard">
-          <div class="logged-in-actions" id="loggedInActions" style="display: none;">
+          <div class="logged-in-actions hidden" id="loggedInActions">
             <div class="user-info">
               <img src="" alt="Avatar" id="userAvatar" class="user-avatar-small">
               <span id="userNameDisplay" class="user-name-text"></span>
@@ -86,7 +85,7 @@
             <span class="toggle-sub">Enable if playing on Bedrock</span>
           </div>
           <label class="switch">
-            <input type="checkbox" id="bedrockToggle">
+            <input type="checkbox" id="bedrockToggle" aria-label="Bedrock Edition">
             <span class="slider round"></span>
           </label>
         </div>
@@ -101,7 +100,7 @@
     <div class="modal-content logout-modal">
       <div class="logout-header">
         <div class="warning-icon-wrapper">
-          <i class="ti ti-alert-triangle" style="font-size: 32px;"></i>
+          <i class="ti ti-alert-triangle icon-large"></i>
         </div>
         <h2>Confirm Logout</h2>
         <p>Are you sure you want to end your session? You will need to login again to access your account.</p>
@@ -327,7 +326,7 @@
 
   <!-- STORE SECTION PREVIEW -->
   <section class="store-section" id="store">
-    <h2 class="reveal" style="font-family: var(--font-display); text-transform: uppercase;">Store</h2>
+    <h2 class="reveal section-title-uppercase">Store</h2>
     <p class="section-sub reveal">Browse our packages and ranks</p>
     
     <div class="store-container">
@@ -335,7 +334,7 @@
       <!-- SIDEBAR -->
       <aside class="store-sidebar reveal">
         <div class="sidebar-header">SELECT A CATEGORY</div>
-        <nav class="sidebar-nav" style="position: relative;">
+        <nav class="sidebar-nav">
           <div class="sidebar-indicator"></div>
           <a href="/store/ranks" class="sidebar-link" data-category="Ranks" data-category-path="ranks">
             <i class="ti ti-medal"></i> Ranks
@@ -393,7 +392,7 @@
 
         <!-- CATEGORY HEADER (Visible when a category is selected) -->
 
-        <div class="store-content-header reveal" id="store-category-header" style="display: none;">
+        <div class="store-content-header reveal" id="store-category-header">
           <h1>Coins [LifeSteal]</h1>
           <p>Get yourself some coins to get awesome keys & perks from coinshop.<br><br>Note: You will receive these coins in LifeSteal Gamemode</p>
         </div>
@@ -402,7 +401,7 @@
           
           <!-- Rank 1 -->
           <div class="card package-card reveal" data-category="ranks" data-product-id="vip-rank" data-product-title="VIP Rank" data-product-price="4.99" data-product-image="assets/images/logo.png" data-product-description="Elevate your experience with our premium ranks. Get exclusive perks, commands, and a special prefix in-game!">
-            <div class="package-img" style="background: url('assets/images/logo.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px;"></div>
+            <img src="assets/images/logo.png" alt="VIP Rank" class="package-img">
             <div class="package-title">VIP Rank</div>
             <div class="package-price">4.99 USD</div>
             <div class="package-actions">
@@ -415,7 +414,7 @@
 
           <!-- Rank 2 -->
           <div class="card package-card reveal" data-category="ranks" data-product-id="elite-rank" data-product-title="Elite Rank" data-product-price="9.99" data-product-image="assets/images/logo.png" data-product-description="The Elite rank for those who want the best. Includes all VIP perks plus advanced commands and exclusive access!">
-            <div class="package-img" style="background: url('assets/images/logo.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px;"></div>
+            <img src="assets/images/logo.png" alt="Elite Rank" class="package-img">
             <div class="package-title">Elite Rank</div>
             <div class="package-price">9.99 USD</div>
             <div class="package-actions">
@@ -428,7 +427,7 @@
 
           <!-- Coin 1 -->
           <div class="card package-card reveal" data-category="coins" data-product-id="15600-coins" data-product-title="15600 Coins (LIFESTEAL)" data-product-price="12.20" data-product-image="assets/images/logo.png" data-product-description="A massive bundle of 15,600 coins to spend in the LifeSteal coinshop. Get the best items and perks instantly!">
-            <div class="package-img" style="background: url('assets/images/logo.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px;"></div>
+            <img src="assets/images/logo.png" alt="15600 Coins (LIFESTEAL)" class="package-img">
             <div class="package-title">15600 Coins (LIFESTEAL)</div>
             <div class="package-price">12.20 USD</div>
             <div class="package-actions">
@@ -441,7 +440,7 @@
 
           <!-- Coin 2 -->
           <div class="card package-card reveal" data-category="coins" data-product-id="7800-coins" data-product-title="7800 Coins (LIFESTEAL)" data-product-price="6.50" data-product-image="assets/images/logo.png" data-product-description="7,800 coins for your LifeSteal adventures. Perfect for getting those essential keys and upgrades!">
-            <div class="package-img" style="background: url('assets/images/logo.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px;"></div>
+            <img src="assets/images/logo.png" alt="7800 Coins (LIFESTEAL)" class="package-img">
             <div class="package-title">7800 Coins (LIFESTEAL)</div>
             <div class="package-price">6.50 USD</div>
             <div class="package-actions">
@@ -454,7 +453,7 @@
 
           <!-- Coin 3 -->
           <div class="card package-card reveal" data-category="coins" data-product-id="5660-coins" data-product-title="5660 Coins (LIFESTEAL)" data-product-price="4.60" data-product-image="assets/images/logo.png" data-product-description="Boost your coin balance with 5,660 coins. Great value for any LifeSteal player!">
-            <div class="package-img" style="background: url('assets/images/logo.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px;"></div>
+            <img src="assets/images/logo.png" alt="5660 Coins (LIFESTEAL)" class="package-img">
             <div class="package-title">5660 Coins (LIFESTEAL)</div>
             <div class="package-price">4.60 USD</div>
             <div class="package-actions">
@@ -467,7 +466,7 @@
 
           <!-- Coin 4 -->
           <div class="card package-card reveal" data-category="coins" data-product-id="2800-coins" data-product-title="2800 Coins (LIFESTEAL)" data-product-price="2.50" data-product-image="assets/images/logo.png" data-product-description="A quick boost of 2,800 coins. Perfect for a few extra keys or perks! ">
-            <div class="package-img" style="background: url('assets/images/logo.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px;"></div>
+            <img src="assets/images/logo.png" alt="2800 Coins (LIFESTEAL)" class="package-img">
             <div class="package-title">2800 Coins (LIFESTEAL)</div>
             <div class="package-price">2.50 USD</div>
             <div class="package-actions">
@@ -480,7 +479,7 @@
 
           <!-- Key 1 -->
           <div class="card package-card reveal" data-category="keys" data-product-id="legendary-key" data-product-title="Legendary Crate Key" data-product-price="2.99" data-product-image="https://cdn.pixabay.com/photo/2016/03/31/21/53/key-1296700_960_720.png">
-            <div class="package-img" style="background: url('https://cdn.pixabay.com/photo/2016/03/31/21/53/key-1296700_960_720.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px; filter: drop-shadow(0 0 10px gold);"></div>
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/21/53/key-1296700_960_720.png" alt="Legendary Crate Key" class="package-img gold-shadow">
             <div class="package-title">Legendary Crate Key</div>
             <div class="package-price">2.99 USD</div>
             <div class="package-actions">
@@ -493,7 +492,7 @@
 
           <!-- Key 2 -->
           <div class="card package-card reveal" data-category="keys" data-product-id="mythic-key" data-product-title="Mythic Crate Key" data-product-price="1.99" data-product-image="https://cdn.pixabay.com/photo/2016/03/31/21/53/key-1296700_960_720.png">
-            <div class="package-img" style="background: url('https://cdn.pixabay.com/photo/2016/03/31/21/53/key-1296700_960_720.png') center/contain no-repeat; width:120px; height:120px; margin-bottom:16px; filter: drop-shadow(0 0 10px purple);"></div>
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/21/53/key-1296700_960_720.png" alt="Mythic Crate Key" class="package-img purple-shadow">
             <div class="package-title">Mythic Crate Key</div>
             <div class="package-price">1.99 USD</div>
             <div class="package-actions">
