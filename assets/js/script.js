@@ -1,8 +1,6 @@
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Store Frontend JavaScript
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+// EclipX MC Store JS
 
-// ━━ NAVBAR SCROLL ━━
+// NAVBAR SCROLL
 function initNavbarScroll() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -11,7 +9,7 @@ function initNavbarScroll() {
   }, { passive: true });
 }
 
-// ━━ FAQ ACCORDION ━━
+// FAQ ACCORDION
 function initFAQAccordion() {
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-question');
@@ -25,7 +23,7 @@ function initFAQAccordion() {
   });
 }
 
-// ━━ SCROLL REVEAL ━━
+// SCROLL REVEAL
 function initScrollReveal() {
   const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
@@ -43,7 +41,7 @@ function initScrollReveal() {
   });
 }
 
-// ━━ HERO PARTICLES ━━
+// HERO PARTICLES
 function initHeroParticles() {
   const container = document.querySelector('.hero-particles');
   if (!container) return;
@@ -808,7 +806,7 @@ function initBackToTop() {
   });
 }
 
-// ━━ INIT ━━
+// INIT
 document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initFAQAccordion();
@@ -826,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
 });
 
-// ?? STORE PREVIEW TABS ??
+// STORE PREVIEW TABS
 function switchStoreTab(el, category, updateUrl = true) {
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
   sidebarLinks.forEach(link => link.classList.remove('active'));
@@ -896,7 +894,7 @@ function switchStoreTab(el, category, updateUrl = true) {
   }, 300);
 }
 
-// ━━ SPOTLIGHT NAVBAR LOGIC ━━
+// SPOTLIGHT NAVBAR LOGIC
 (function() {
   const nav = document.querySelector('.spotlight-nav');
   if (!nav) return;
