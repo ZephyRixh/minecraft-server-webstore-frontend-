@@ -253,7 +253,6 @@ section { padding: 50px 5vw; position: relative; }
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  overflow: hidden;
   padding: 0 8px;
   --spotlight-x: 0px;
   --ambience-x: 0px;
