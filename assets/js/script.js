@@ -545,76 +545,10 @@ function initCartPage() {
   });
 
   const checkoutBtn = document.getElementById('checkoutBtn');
-  const checkoutModal = document.getElementById('checkoutModal');
-  const purchaseModal = document.getElementById('purchaseModal');
-  const closeCheckout = document.getElementById('closeCheckout');
-  const closePurchaseModal = document.getElementById('closePurchaseModal');
-  const checkoutItemsPreview = document.getElementById('checkout-items-preview');
-  const checkoutTotalAmount = document.getElementById('checkout-total-amount');
-  const completePurchaseBtn = document.getElementById('completePurchaseBtn');
 
-  checkoutBtn?.addEventListener('click', () => {
-    const cart = getCart();
-    const items = Object.values(cart);
-    if (!items.length) return;
-
-    if (checkoutItemsPreview) {
-      checkoutItemsPreview.innerHTML = items.map(item => `
-        <div class="checkout-item-mini">
-          <span>${item.quantity}x ${item.title}</span>
-          <span>${formatCurrency(item.price * item.quantity)}</span>
-        </div>
-      `).join('');
-    }
-
-    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    if (checkoutTotalAmount) checkoutTotalAmount.textContent = formatCurrency(total);
-
-    checkoutModal?.classList.add('active');
-  });
-
-  closeCheckout?.addEventListener('click', () => {
-    checkoutModal?.classList.remove('active');
-  });
-
-  completePurchaseBtn?.addEventListener('click', async () => {
-    const cart = getCart();
-    const items = Object.values(cart);
-    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const username = localStorage.getItem('mcUser');
-
-    try {
-      const response = await fetch(`${window.CONFIG.API_BASE_URL}/api/orders`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, total, items })
-      });
-
-      if (response.ok) {
-        checkoutModal?.classList.remove('active');
-        purchaseModal?.classList.add('active');
-        saveCart({});
-        updateCartBadge();
-        renderCartPage();
-      } else {
-        alert('Failed to process purchase. Please try again.');
-      }
-    } catch (err) {
-      console.error('Purchase error:', err);
-      alert('Network error. Ensure the backend server is running.');
-    }
-  });
-  
-  closePurchaseModal?.addEventListener('click', () => {
-    purchaseModal?.classList.remove('active');
-  });
-
-  const applyCouponBtn = document.getElementById('applyCoupon');
-  applyCouponBtn?.addEventListener('click', () => {
-    const code = document.getElementById('couponCode')?.value;
-    if (code) {
-      alert(`Coupon "${code}" applied! (Demo only)`);
-    }
+  checkoutBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'https://discord.gg/pvc3CJpKaY';
   });
 }
 
