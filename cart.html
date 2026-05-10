@@ -104,23 +104,7 @@
     </div>
   </div>
 
-  <!-- PURCHASE SUCCESS MODAL -->
-  <div id="purchaseModal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content logout-modal">
-      <div class="logout-header">
-        <div class="warning-icon-wrapper warning-icon-success">
-          <i class="ti ti-check icon-large"></i>
-        </div>
-        <h2>Purchase Successful</h2>
-        <p>Your demo purchase was processed successfully. Thank you for your order!</p>
-      </div>
-      <div class="modal-actions">
-        <button id="closePurchaseModal" class="btn-primary btn-logout-confirm">Okay</button>
-      </div>
-    </div>
-  </div>
-
+  
   <!-- CLEAR CART MODAL -->
   <div id="clearCartModal" class="modal">
     <div class="modal-overlay"></div>
@@ -139,33 +123,7 @@
     </div>
   </div>
 
-  <!-- CHECKOUT MODAL -->
-  <div id="checkoutModal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content checkout-modal">
-      <button class="modal-close" id="closeCheckout">&times;</button>
-      <div class="checkout-header">
-        <i class="ti ti-shopping-cart-check checkout-icon"></i>
-        <h2>Checkout Preview</h2>
-        <p>This is a demo store. No real payments will be processed.</p>
-      </div>
-      <div class="checkout-body">
-        <div class="checkout-summary-mini">
-          <div id="checkout-items-preview"></div>
-          <div class="checkout-total-mini">
-            <span>Total to pay:</span>
-            <strong id="checkout-total-amount">$0.00</strong>
-          </div>
-        </div>
-        <div class="checkout-actions">
-          <button class="btn-primary btn-block" id="completePurchaseBtn">
-            Demo Purchase
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
   <main class="cart-container">
     <header class="cart-header reveal">
         <h1>Your Shopping Cart</h1>
@@ -195,10 +153,6 @@
                         <span>Items Total</span>
                         <span id="cart-count">0 items</span>
                     </div>
-                    <div class="coupon-wrapper">
-                        <input type="text" id="couponCode" placeholder="Coupon Code">
-                        <button id="applyCoupon" class="btn-outline-mini">Apply</button>
-                    </div>
                     <div class="summary-row subtotal">
                         <span>Subtotal</span>
                         <strong id="cart-subtotal">$0.00</strong>
@@ -213,7 +167,7 @@
                     </a>
                 </div>
                 <div class="summary-footer">
-                    <p><i class="ti ti-shield-check"></i> Secure checkout with trusted payment processors</p>
+                    <p><i class="ti ti-brand-discord"></i> Secure checkout via our discord server</p>
                 </div>
             </div>
         </aside>
