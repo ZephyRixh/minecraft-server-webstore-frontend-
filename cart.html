@@ -43,8 +43,20 @@
         <div class="spotlight-nav-ambience"></div>
       </nav>
       <div class="currency-switcher" id="currencySwitcher">
-        <button class="currency-btn" data-currency="USD">USD</button>
-        <button class="currency-btn" data-currency="INR">INR</button>
+        <button class="currency-dropdown-toggle" type="button">
+          <span class="currency-selected-label">USD</span>
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <ul class="currency-dropdown-menu">
+          <li class="currency-option active" data-currency="USD">
+            <span class="currency-option-check"><i class="ti ti-check"></i></span>
+            <span>USD</span>
+          </li>
+          <li class="currency-option" data-currency="INR">
+            <span class="currency-option-check"><i class="ti ti-check"></i></span>
+            <span>INR</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

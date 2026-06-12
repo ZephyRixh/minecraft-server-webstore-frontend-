@@ -317,31 +317,44 @@ function initCurrencySwitcher() {
   const switcher = document.getElementById('currencySwitcher');
   if (!switcher) return;
 
+  const toggle = switcher.querySelector('.currency-dropdown-toggle');
+  const menu = switcher.querySelector('.currency-dropdown-menu');
+  const selectedLabel = toggle?.querySelector('.currency-selected-label');
+
   const updateSwitcherUI = () => {
-    switcher.querySelectorAll('.currency-btn').forEach(btn => {
-      const cur = btn.getAttribute('data-currency');
-      if (cur === currentCurrency) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
+    switcher.querySelectorAll('.currency-option').forEach(opt => {
+      const cur = opt.getAttribute('data-currency');
+      opt.classList.toggle('active', cur === currentCurrency);
     });
+    if (selectedLabel) selectedLabel.textContent = currentCurrency;
   };
 
-  // Set initial active button
   updateSwitcherUI();
 
-  // Set click handlers
-  switcher.addEventListener('click', e => {
-    const btn = e.target.closest('.currency-btn');
-    if (!btn) return;
-    const selectedCurrency = btn.getAttribute('data-currency');
-    if (selectedCurrency === currentCurrency) return;
+  toggle?.addEventListener('click', e => {
+    e.stopPropagation();
+    switcher.classList.toggle('open');
+  });
 
+  menu?.addEventListener('click', e => {
+    const opt = e.target.closest('.currency-option');
+    if (!opt) return;
+    const selectedCurrency = opt.getAttribute('data-currency');
+    if (selectedCurrency === currentCurrency) {
+      switcher.classList.remove('open');
+      return;
+    }
     currentCurrency = selectedCurrency;
     localStorage.setItem(CURRENCY_STORAGE_KEY, selectedCurrency);
     updateSwitcherUI();
     updateAllDisplayedPrices();
+    switcher.classList.remove('open');
+  });
+
+  document.addEventListener('click', e => {
+    if (!switcher.contains(e.target)) {
+      switcher.classList.remove('open');
+    }
   });
 }
 
